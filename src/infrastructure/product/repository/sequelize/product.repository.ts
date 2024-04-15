@@ -1,4 +1,5 @@
 import Product from "../../../../domain/product/entity/product";
+import ProductInterface from "../../../../domain/product/entity/product.interface";
 import ProductRepositoryInterface from "../../../../domain/product/repository/product-repository.interface";
 import ProductModel from "./product.model";
 
@@ -7,7 +8,7 @@ export default class ProductRepository implements ProductRepositoryInterface {
     await ProductModel.create({
       id: entity.id,
       name: entity.name,
-      price: entity.price,
+      price: entity.price
     });
   }
 
