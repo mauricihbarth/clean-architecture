@@ -3,8 +3,6 @@ import {
     InputCreateProductDto,
     OutputCreateProductDto,
 } from "./create.product.dto";
-import { v4 as uuid } from "uuid";
-import ProductFactory from "../../../domain/product/factory/product.factory";
 import Product from "../../../domain/product/entity/product";
 
 export default class CreateProductUseCase {
@@ -23,13 +21,13 @@ export default class CreateProductUseCase {
             input.name,
             input.price
         );
-
+        
         await this.productRepository.create(product);
 
         return {
             id: product.id,
             name: product.name,
-            type: null,
+            //type: input.type,
             price: product.price
         };
     }

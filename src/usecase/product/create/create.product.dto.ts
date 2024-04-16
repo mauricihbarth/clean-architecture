@@ -1,6 +1,6 @@
 export interface InputCreateProductDto {
     id: string,
-    type:string,
+    //type:string,
     name: string,
     price: number
 }
@@ -8,6 +8,6 @@ export interface InputCreateProductDto {
 export interface OutputCreateProductDto {
     id: string,
     name: string,
-    type: string,
+   // type: string,
     price: number
 }
