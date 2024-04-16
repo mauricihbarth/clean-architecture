@@ -24,6 +24,7 @@ export default class CreateProductUseCase {
         // );
 
         const product = ProductFactory.create(
+            "a",
             input.name,
             input.price
         );

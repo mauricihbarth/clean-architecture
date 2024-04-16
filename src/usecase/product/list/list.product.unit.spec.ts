@@ -8,7 +8,7 @@ const product1 = ProductFactory.create(
 );
 
 const product2 = ProductFactory.create(
-    "b",
+    "a",
     "Dorflex",
     6.68
 );

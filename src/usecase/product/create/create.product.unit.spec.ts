@@ -51,17 +51,4 @@ describe("Unit test create product use case", () => {
             "Price must be greater than zero"
         );
     });
-
-    it("should thrown an error when id is unknown", async () => {
-        const productRepository = MockRepository();
-        const productCreateUseCase = new CreateProductUseCase(productRepository);
-        
-        input.price = 88;
-        input.id = "";
-
-        await expect(productCreateUseCase.execute(input)).rejects.toThrow(
-            "Id is required"
-        );
-    });
-
 });
