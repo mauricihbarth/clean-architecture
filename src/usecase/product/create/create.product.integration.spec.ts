@@ -39,15 +39,19 @@ describe("Test create product use case", () => {
             price: 1.5
         };
 
-        await usecase.execute(input);
-        const result = await productRepository.find(product.id);
+        const output = await usecase.execute(input);
+        // const result = await productRepository.find(product.id);
 
-        const output = {
-            id: result.id,
-            name: result.name,
-            price: result.price
-        };
+        // const output = {
+        //     id: result.id,
+        //     name: result.name,
+        //     price: result.price
+        // };
 
-        expect(result).toEqual(output);
+        expect(output).toEqual({
+            id: expect.any(String),
+            name: input.name,
+            price: input.price
+        });
     });
 });

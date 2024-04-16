@@ -7,15 +7,11 @@ export default class ProductRepository implements ProductRepositoryInterface {
 
 
   async create(entity: Product): Promise<void> {
-    try {
-      await ProductModel.create({
-        id: entity.id,
-        name: entity.name,
-        price: entity.price
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    await ProductModel.create({
+      id: entity.id,
+      name: entity.name,
+      price: entity.price
+    })
   }
 
 
