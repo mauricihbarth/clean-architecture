@@ -4,6 +4,7 @@ import {
     OutputCreateProductDto,
 } from "./create.product.dto";
 import Product from "../../../domain/product/entity/product";
+import ProductFactory from "../../../domain/product/factory/product.factory";
 
 export default class CreateProductUseCase {
     private productRepository: ProductRepositoryInterface;
@@ -16,18 +17,22 @@ export default class CreateProductUseCase {
         input: InputCreateProductDto
     ): Promise<OutputCreateProductDto> {
 
-        const product = new Product(
-            input.id,
+        // const product = new Product(
+        //     input.id,
+        //     input.name,
+        //     input.price
+        // );
+
+        const product = ProductFactory.create(
             input.name,
             input.price
         );
-        
+
         await this.productRepository.create(product);
 
         return {
             id: product.id,
             name: product.name,
-            //type: input.type,
             price: product.price
         };
     }

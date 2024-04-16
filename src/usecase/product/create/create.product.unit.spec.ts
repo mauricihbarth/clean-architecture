@@ -1,6 +1,3 @@
-import { UUID, UUIDV4 } from "sequelize";
-import { v4 as uuid } from "uuid";
-
 import CreateProductUseCase from "./create.product.usecase";
 const input = {
     id: "123",
@@ -28,7 +25,6 @@ describe("Unit test create product use case", () => {
         expect(output).toEqual({
             id: expect.any(String),
             name: input.name,
-            type : null,
             price: input.price
         });
     });
