@@ -28,15 +28,14 @@ describe("Product unit tests", () => {
   it("should throw error when price is less than zero", () => {
     var t = expect(() => {
       let product = new Product("123", "NameSS", -1);
-    // }).toThrowError("Price must be zero or greater");
-     }).toThrowError("Price must be greater than zero");
+    }).toThrowError("Price must be zero or greater");
   });
 
-  // it("should throw error when name is empty and price is less than zero", () => {
-  //   var t = expect(() => {
-  //     let product = new Product("123", "", -1);
-  //   }).toThrowError("product: Name is required,product: Price must be zero or greater");
+  it("should throw error when name is empty and price is less than zero", () => {
+    var t = expect(() => {
+      let product = new Product("123", "", -1);
+    }).toThrowError("product: Name is required,product: Price must be zero or greater");
 
-  // });
+  });
 });
 
